@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>区块链溯源系统 - 香格里拉藏梨溯源商城</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <!-- 导航栏 -->
+  <nav class="navbar">
+    <div class="container navbar-container">
+      <a href="home.html" class="navbar-logo">藏梨溯源</a>
+      <div class="navbar-links">
+        <a href="home.html" class="navbar-link">首页</a>
+        <a href="products.html" class="navbar-link">产品展示</a>
+        <a href="blockchain-trace.html" class="navbar-link">溯源系统</a>
+        <a href="about.html" class="navbar-link">关于我们</a>
+      </div>
+      <div class="navbar-actions">
+        <a href="cart.html" class="navbar-link"><i class="ri-shopping-cart-2-line"></i> 购物车</a>
+        <a href="wallet.html" class="navbar-link"><i class="ri-wallet-3-line"></i> 我的钱包</a>
+        <a href="user.html" class="navbar-link"><i class="ri-user-3-line"></i> 个人中心</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 页面标题 -->
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h1 class="fw-bold mb-0">区块链溯源系统</h1>
+        <p class="text-muted mb-5">利用区块链技术，确保每一颗藏梨的真实性和可追溯性</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 溯源系统介绍 -->
+  <div class="container mt-3">
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6">
+        <h2 class="fw-bold mb-4">什么是区块链溯源</h2>
+        <p>区块链溯源是利用区块链技术的不可篡改、分布式存储等特性，为每一个产品建立唯一的身份标识和全生命周期的数据记录。</p>
+        <p>在我们的香格里拉藏梨溯源系统中，从种植、生长、采摘、包装到运输的每一个环节都被记录在区块链上，确保信息的真实性和可验证性。</p>
+        <p>通过扫描产品上的二维码，消费者可以查看完整的产品溯源信息，了解产品的来源和品质保证。</p>
+      </div>
+      <div class="col-md-6">
+        <img src="https://images.unsplash.com/photo-1639815188546-c43c240ff4df?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=600&q=80" class="img-fluid rounded-3 shadow" alt="区块链溯源图示">
+      </div>
+    </div>
+
+    <!-- 区块链溯源的优势 -->
+    <div class="row mb-5">
+      <div class="col-12">
+        <h2 class="fw-bold mb-4 text-center">区块链溯源的优势</h2>
+      </div>
+      
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-3">
+              <div class="trace-icon me-3">
+                <i class="ri-shield-check-fill"></i>
+              </div>
+              <h4 class="card-title m-0">真实性保证</h4>
+            </div>
+            <p class="card-text">区块链的不可篡改特性确保所有记录的真实可靠，从源头杜绝假冒伪劣产品。</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-3">
+              <div class="trace-icon me-3">
+                <i class="ri-eye-fill"></i>
+              </div>
+              <h4 class="card-title m-0">透明度</h4>
+            </div>
+            <p class="card-text">所有产品信息公开透明，消费者可以查看完整的产品生命周期，增强购买信心。</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-3">
+              <div class="trace-icon me-3">
+                <i class="ri-link-m"></i>
+              </div>
+              <h4 class="card-title m-0">不可篡改</h4>
+            </div>
+            <p class="card-text">一旦信息被记录在区块链上，就无法被更改，确保数据永久保存且真实可靠。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 溯源流程 -->
+    <div class="row mb-5">
+      <div class="col-12 text-center mb-4">
+        <h2 class="fw-bold">溯源流程</h2>
+        <p class="text-muted">从种植到餐桌，全程可追溯</p>
+      </div>
+      
+      <div class="col-12">
+        <div class="position-relative">
+          <!-- 流程线 -->
+          <div class="position-absolute start-50 translate-middle-x" style="height: 100%; width: 2px; background-color: var(--primary-color); top: 0; z-index: -1;"></div>
+          
+          <!-- 流程步骤 -->
+          <div class="row mb-5">
+            <div class="col-md-5 text-end pe-5">
+              <h4 class="fw-bold">种植环境</h4>
+              <p>记录种植地区、海拔、土壤环境等基础信息</p>
+            </div>
+            <div class="col-md-2 text-center">
+              <div class="trace-icon mx-auto mb-2" style="width: 60px; height: 60px;">
+                <i class="ri-plant-line" style="font-size: 24px;"></i>
+              </div>
+              <div class="trace-hash">上链时间: 种植初期</div>
+            </div>
+            <div class="col-md-5"></div>
+          </div>
+          
+          <div class="row mb-5">
+            <div class="col-md-5"></div>
+            <div class="col-md-2 text-center">
+              <div class="trace-icon mx-auto mb-2" style="width: 60px; height: 60px;">
+                <i class="ri-sun-line" style="font-size: 24px;"></i>
+              </div>
+              <div class="trace-hash">上链时间: 生长期间</div>
+            </div>
+            <div class="col-md-5 ps-5">
+              <h4 class="fw-bold">生长周期</h4>
+              <p>记录气候条件、生长状态、农事活动、肥料使用等</p>
+            </div>
+          </div>
+          
+          <div class="row mb-5">
+            <div class="col-md-5 text-end pe-5">
+              <h4 class="fw-bold">采摘与加工</h4>
+              <p>记录采摘时间、加工方式、质量检测等信息</p>
+            </div>
+            <div class="col-md-2 text-center">
+              <div class="trace-icon mx-auto mb-2" style="width: 60px; height: 60px;">
+                <i class="ri-hand-heart-line" style="font-size: 24px;"></i>
+              </div>
+              <div class="trace-hash">上链时间: 采摘后</div>
+            </div>
+            <div class="col-md-5"></div>
+          </div>
+          
+          <div class="row mb-5">
+            <div class="col-md-5"></div>
+            <div class="col-md-2 text-center">
+              <div class="trace-icon mx-auto mb-2" style="width: 60px; height: 60px;">
+                <i class="ri-award-line" style="font-size: 24px;"></i>
+              </div>
+              <div class="trace-hash">上链时间: 包装前</div>
+            </div>
+            <div class="col-md-5 ps-5">
+              <h4 class="fw-bold">质量认证</h4>
+              <p>记录产品各项质量指标、认证信息、检测报告等</p>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-5 text-end pe-5">
+              <h4 class="fw-bold">物流配送</h4>
+              <p>记录物流信息、运输条件、温度控制等环节</p>
+            </div>
+            <div class="col-md-2 text-center">
+              <div class="trace-icon mx-auto mb-2" style="width: 60px; height: 60px;">
+                <i class="ri-truck-line" style="font-size: 24px;"></i>
+              </div>
+              <div class="trace-hash">上链时间: 发货时</div>
+            </div>
+            <div class="col-md-5"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 溯源查询区域 -->
+    <div class="row mb-5">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body p-5">
+            <h2 class="text-center fw-bold mb-4">产品溯源查询</h2>
+            <div class="row justify-content-center">
+              <div class="col-md-8">
+                <div class="mb-4 text-center">
+                  <p>输入产品包装上的溯源码或扫描二维码，查询产品完整溯源信息</p>
+                </div>
+                <div class="input-group mb-4">
+                  <input type="text" class="form-control" placeholder="请输入产品溯源码 (例如: 0x7F9d8...)" aria-label="溯源码">
+                  <button class="btn btn-primary" type="button">查询</button>
+                </div>
+                <div class="text-center">
+                  <p class="mb-3">或者</p>
+                  <button class="btn btn-outline-primary">
+                    <i class="ri-qr-scan-line me-2"></i> 扫描二维码
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 溯源案例 -->
+    <div class="row mb-5">
+      <div class="col-12 text-center mb-4">
+        <h2 class="fw-bold">溯源案例展示</h2>
+        <p class="text-muted">了解我们如何追踪每一颗藏梨的完整生命周期</p>
+      </div>
+      
+      <div class="col-md-6 mb-4">
+        <div class="card h-100">
+          <img src="https://images.unsplash.com/photo-1514756331096-242fdeb70d4a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=450&q=80" class="card-img-top" alt="有机藏梨礼盒装">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">有机藏梨礼盒装 溯源案例</h5>
+            <p class="card-text">通过扫描礼盒上的二维码，消费者可以查看这批藏梨从种植到销售的完整记录，包括种植环境、气候条件、采摘时间等信息。</p>
+            <a href="#" class="btn btn-outline-primary">查看案例</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 mb-4">
+        <div class="card h-100">
+          <img src="https://images.unsplash.com/photo-1514756331096-242fdeb70d4a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=450&q=80" class="card-img-top" alt="藏梨果酒">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">藏梨果酒 溯源案例</h5>
+            <p class="card-text">藏梨果酒的溯源信息不仅包含原材料的溯源记录，还包括发酵工艺、酿造过程、储存条件等关键信息，保证产品品质。</p>
+            <a href="#" class="btn btn-outline-primary">查看案例</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 问答区域 -->
+  <div class="container mt-5 mb-5">
+    <div class="row">
+      <div class="col-12 text-center mb-4">
+        <h2 class="fw-bold">常见问题</h2>
+      </div>
+      
+      <div class="col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">什么是区块链技术？</h5>
+            <p class="card-text">区块链是一种分布式数据库技术，它允许多方共同维护一个安全、不可篡改、可追溯的信息链。在我们的溯源系统中，区块链确保所有产品信息真实可靠。</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">如何验证产品的溯源信息？</h5>
+            <p class="card-text">每件产品包装上都有唯一的溯源码和二维码，消费者可以通过我们的网站或App输入溯源码或扫描二维码查询完整的溯源信息。</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">为什么需要区块链溯源？</h5>
+            <p class="card-text">传统溯源系统容易被篡改，难以确保信息真实性。区块链溯源通过技术手段确保信息不可篡改，让消费者能够信任产品的来源和品质。</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">区块链溯源系统如何保证数据真实性？</h5>
+            <p class="card-text">我们在产品生产各环节使用物联网设备自动采集数据，结合人工审核，确保上链数据真实可靠。同时，区块链的分布式特性使得数据一旦上链就无法被篡改。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-section">
+        <h3>藏梨溯源</h3>
+        <p>致力于通过区块链技术，为每一位消费者提供真实、透明的香格里拉特产藏梨。</p>
+        <div class="mt-3">
+          <a href="#" class="text-white me-3"><i class="ri-wechat-line"></i></a>
+          <a href="#" class="text-white me-3"><i class="ri-weibo-line"></i></a>
+          <a href="#" class="text-white me-3"><i class="ri-instagram-line"></i></a>
+          <a href="#" class="text-white"><i class="ri-twitter-x-line"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h3>快速链接</h3>
+        <ul class="footer-links">
+          <li><a href="home.html">首页</a></li>
+          <li><a href="products.html">产品展示</a></li>
+          <li><a href="blockchain-trace.html">溯源系统</a></li>
+          <li><a href="about.html">关于我们</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>客户服务</h3>
+        <ul class="footer-links">
+          <li><a href="#">购买指南</a></li>
+          <li><a href="#">配送方式</a></li>
+          <li><a href="#">支付方式</a></li>
+          <li><a href="#">售后服务</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>联系我们</h3>
+        <ul class="footer-links">
+          <li><i class="ri-map-pin-line me-2"></i> 云南省迪庆藏族自治州香格里拉市</li>
+          <li><i class="ri-phone-line me-2"></i> 400-123-4567</li>
+          <li><i class="ri-mail-line me-2"></i> contact@zanglitrace.com</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="container">
+      <div class="copyright">
+        <p>© 2023 藏梨溯源 版权所有 | 基于区块链技术的溯源平台</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 
