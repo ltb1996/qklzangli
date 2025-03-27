@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>产品展示 - 香格里拉藏梨溯源商城</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* 确保所有产品卡片高度一致 */
+    .product-grid .card {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 0; /* 移除底部间距 */
+    }
+    
+    .product-grid .card-img {
+      height: 200px; /* 统一图片高度 */
+      object-fit: cover;
+      width: 100%; /* 确保宽度也统一 */
+    }
+    
+    .product-grid .card-body {
+      flex: 1; /* 让卡片内容区域自动填充剩余高度 */
+      display: flex;
+      flex-direction: column;
+      padding: 15px; /* 统一内边距 */
+    }
+    
+    .product-grid .card-title {
+      font-size: 16px; /* 统一标题大小 */
+      height: 24px; /* 固定标题高度 */
+      overflow: hidden; /* 超出部分隐藏 */
+      margin-bottom: 10px; /* 统一底部间距 */
+    }
+    
+    .product-grid .card-text {
+      flex-grow: 1; /* 让描述文本区域自动填充可用空间 */
+      margin-bottom: 15px;
+      font-size: 14px; /* 统一描述文字大小 */
+      color: #666; /* 统一描述文字颜色 */
+      line-height: 1.4; /* 统一行高 */
+      height: 40px; /* 固定描述文本高度，大约2-3行文字 */
+      overflow: hidden; /* 超出部分隐藏 */
+    }
+    
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 0;
+    }
+    
+    /* 价格筛选区域样式 */
+    .price-filter {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- 导航栏 -->
+  <nav class="navbar">
+    <div class="container navbar-container">
+      <a href="home.html" class="navbar-logo">藏梨溯源</a>
+      <div class="navbar-links">
+        <a href="home.html" class="navbar-link">首页</a>
+        <a href="products.html" class="navbar-link">产品展示</a>
+        <a href="blockchain-trace.html" class="navbar-link">溯源系统</a>
+        <a href="about.html" class="navbar-link">关于我们</a>
+      </div>
+      <div class="navbar-actions">
+        <a href="cart.html" class="navbar-link"><i class="ri-shopping-cart-2-line"></i> 购物车</a>
+        <a href="wallet.html" class="navbar-link"><i class="ri-wallet-3-line"></i> 我的钱包</a>
+        <a href="user.html" class="navbar-link"><i class="ri-user-3-line"></i> 个人中心</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 页面标题 -->
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="fw-bold mb-0">香格里拉藏梨产品</h1>
+        <p class="text-muted">探索源自雪域高原的特色藏梨产品，每一件都可溯源至香格里拉</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- 筛选器和搜索 -->
+  <div class="container mt-4">
+    <div class="card p-3">
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="input-group">
+            <span class="input-group-text bg-white"><i class="ri-search-line"></i></span>
+            <input type="text" class="form-control border-start-0" placeholder="搜索产品...">
+          </div>
+        </div>
+        <div class="col-md-3">
+          <select class="form-select">
+            <option selected>产品分类</option>
+            <option>新鲜藏梨</option>
+            <option>藏梨加工品</option>
+            <option>礼盒套装</option>
+            <option>季节限定</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <select class="form-select">
+            <option selected>价格排序</option>
+            <option>价格从低到高</option>
+            <option>价格从高到低</option>
+            <option>最新上架</option>
+            <option>销量优先</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <button class="btn btn-primary w-100">筛选</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 产品展示 -->
+  <div class="container mt-4">
+    <div class="row">
+      <!-- 左侧筛选栏 -->
+      <div class="col-md-3">
+        <div class="card p-3 mb-4">
+          <h5 class="fw-bold mb-3">价格区间</h5>
+          <div class="mb-3">
+            <div class="d-flex justify-content-between mb-2">
+              <span>¥0</span>
+              <span>¥500+</span>
+            </div>
+            <input type="range" class="form-range" min="0" max="500" step="50">
+          </div>
+          <div class="row g-2">
+            <div class="col-6">
+              <input type="number" class="form-control" placeholder="最低价">
+            </div>
+            <div class="col-6">
+              <input type="number" class="form-control" placeholder="最高价">
+            </div>
+          </div>
+        </div>
+        
+        <div class="card p-3 mb-4">
+          <h5 class="fw-bold mb-3">溯源认证</h5>
+          <div class="form-check mb-2">
+            <input class="form-check-input" type="checkbox" id="verified" checked>
+            <label class="form-check-label" for="verified">
+              区块链认证
+            </label>
+          </div>
+          <div class="form-check mb-2">
+            <input class="form-check-input" type="checkbox" id="organic" checked>
+            <label class="form-check-label" for="organic">
+              有机认证
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="limited">
+            <label class="form-check-label" for="limited">
+              限量版
+            </label>
+          </div>
+        </div>
+        
+        <div class="card p-3">
+          <h5 class="fw-bold mb-3">产品评分</h5>
+          <div class="form-check mb-2">
+            <input class="form-check-input" type="radio" name="rating" id="five-star" checked>
+            <label class="form-check-label" for="five-star">
+              <div class="text-warning">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+              </div>
+            </label>
+          </div>
+          <div class="form-check mb-2">
+            <input class="form-check-input" type="radio" name="rating" id="four-star">
+            <label class="form-check-label" for="four-star">
+              <div class="text-warning">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-line"></i>
+              </div>
+              及以上
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="rating" id="all-ratings">
+            <label class="form-check-label" for="all-ratings">
+              显示所有评分
+            </label>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 右侧产品列表 -->
+      <div class="col-md-9">
+        <div class="product-grid">
+          <!-- 产品1 -->
+          <div class="card">
+            <div style="position: relative;">
+              <span class="blockchain-badge" style="position: absolute; top: 10px; left: 10px;">
+                <i class="ri-link-m"></i> 区块链认证
+              </span>
+              <img src="https://images.unsplash.com/photo-1514756331096-242fdeb70d4a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&h=500&q=80" 
+                   alt="香格里拉有机藏梨" class="card-img">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">有机藏梨礼盒装</h5>
+              <p class="card-text">香格里拉高海拔地区种植，口感甜脆，富含营养</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="fw-bold text-primary">¥128.00</span>
+                <a href="product-detail.html" class="btn btn-sm btn-outline">查看详情</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 产品2 -->
+          <div class="card">
+            <div style="position: relative;">
+              <span class="blockchain-badge" style="position: absolute; top: 10px; left: 10px;">
+                <i class="ri-link-m"></i> 区块链认证
+              </span>
+              <img src="https://images.unsplash.com/photo-1514756331096-242fdeb70d4a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&h=500&q=80" 
+                   alt="藏梨干" class="card-img">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">藏梨干 手工制作</h5>
+              <p class="card-text">传统晾晒工艺，保留原有营养，香甜可口</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="fw-bold text-primary">¥88.00</span>
+                <a href="product-detail.html" class="btn btn-sm btn-outline">查看详情</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 产品3 -->
+          <div class="card">
+            <div style="position: relative;">
+              <span class="blockchain-badge" style="position: absolute; top: 10px; left: 10px;">
+                <i class="ri-link-m"></i> 区块链认证
+              </span>
+              <img src="https://images.unsplash.com/photo-1514756331096-242fdeb70d4a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&h=500&q=80" 
+                   alt="藏梨果酒" class="card-img">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">藏梨果酒 限量版</h5>
+              <p class="card-text">采用高海拔藏梨自然发酵，口感独特</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="fw-bold text-primary">¥198.00</span>
+                <a href="product-detail.html" class="btn btn-sm btn-outline">查看详情</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 产品4 -->
+          <div class="card">
+            <div style="position: relative;">
+              <span class="blockchain-badge" style="position: absolute; top: 10px; left: 10px;">
+                <i class="ri-link-m"></i> 区块链认证
+              </span>
+              <img src="https://images.unsplash.com/photo-1546548970-71785318a17b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&h=500&q=80" 
+                   alt="藏梨果茶" class="card-img">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">藏梨果茶 养生组合</h5>
+              <p class="card-text">精选藏梨与高原花草搭配，清香怡人</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="fw-bold text-primary">¥108.00</span>
+                <a href="product-detail.html" class="btn btn-sm btn-outline">查看详情</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 产品5 -->
+          <div class="card">
+            <div style="position: relative;">
+              <span class="blockchain-badge" style="position: absolute; top: 10px; left: 10px;">
+                <i class="ri-link-m"></i> 区块链认证
+              </span>
+              <img src="https://images.unsplash.com/photo-1519162808019-7de1683fa2ad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&h=500&q=80" 
+                   alt="藏梨果酱" class="card-img">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">藏梨果酱 天然手工</h5>
+              <p class="card-text">无添加剂，保留藏梨原汁原味，甜度适中</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="fw-bold text-primary">¥68.00</span>
+                <a href="product-detail.html" class="btn btn-sm btn-outline">查看详情</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 产品6 -->
+          <div class="card">
+            <div style="position: relative;">
+              <span class="blockchain-badge" style="position: absolute; top: 10px; left: 10px;">
+                <i class="ri-link-m"></i> 区块链认证
+              </span>
+              <img src="https://images.unsplash.com/photo-1546548970-71785318a17b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&h=500&q=80" 
+                   alt="藏梨礼盒特惠装" class="card-img">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">藏梨礼盒特惠装</h5>
+              <p class="card-text">3斤装藏梨精选大果，送礼自用皆宜</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="fw-bold text-primary">¥168.00</span>
+                <a href="product-detail.html" class="btn btn-sm btn-outline">查看详情</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 产品7 -->
+          <div class="card">
+            <div style="position: relative;">
+              <span class="blockchain-badge" style="position: absolute; top: 10px; left: 10px;">
+                <i class="ri-link-m"></i> 区块链认证
+              </span>
+              <img src="https://images.unsplash.com/photo-1603569283847-aa295f0d016a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&h=500&q=80" 
+                   alt="藏梨花蜜" class="card-img">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">藏梨花蜜 原生态</h5>
+              <p class="card-text">高海拔地区藏梨花蜜，浓郁芳香，源远流长</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="fw-bold text-primary">¥158.00</span>
+                <a href="product-detail.html" class="btn btn-sm btn-outline">查看详情</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 产品8 -->
+          <div class="card">
+            <div style="position: relative;">
+              <span class="blockchain-badge" style="position: absolute; top: 10px; left: 10px;">
+                <i class="ri-link-m"></i> 区块链认证
+              </span>
+              <img src="https://images.unsplash.com/photo-1559181567-c3190ca9959b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&h=500&q=80" 
+                   alt="藏梨特级果脯" class="card-img">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">藏梨特级果脯</h5>
+              <p class="card-text">传统工艺制作，口感香甜，零添加</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="fw-bold text-primary">¥98.00</span>
+                <a href="product-detail.html" class="btn btn-sm btn-outline">查看详情</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 分页 -->
+        <div class="d-flex justify-content-center mt-5">
+          <nav aria-label="Page navigation">
+            <ul class="pagination">
+              <li class="page-item disabled">
+                <a class="page-link" href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+              <li class="page-item active"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-section">
+        <h3>藏梨溯源</h3>
+        <p>致力于通过区块链技术，为每一位消费者提供真实、透明的香格里拉特产藏梨。</p>
+        <div class="mt-3">
+          <a href="#" class="text-white me-3"><i class="ri-wechat-line"></i></a>
+          <a href="#" class="text-white me-3"><i class="ri-weibo-line"></i></a>
+          <a href="#" class="text-white me-3"><i class="ri-instagram-line"></i></a>
+          <a href="#" class="text-white"><i class="ri-twitter-x-line"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h3>快速链接</h3>
+        <ul class="footer-links">
+          <li><a href="home.html">首页</a></li>
+          <li><a href="products.html">产品展示</a></li>
+          <li><a href="blockchain-trace.html">溯源系统</a></li>
+          <li><a href="about.html">关于我们</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>客户服务</h3>
+        <ul class="footer-links">
+          <li><a href="#">购买指南</a></li>
+          <li><a href="#">配送方式</a></li>
+          <li><a href="#">支付方式</a></li>
+          <li><a href="#">售后服务</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>联系我们</h3>
+        <ul class="footer-links">
+          <li><i class="ri-map-pin-line me-2"></i> 云南省迪庆自治州香格里拉市</li>
+          <li><i class="ri-phone-line me-2"></i> 400-123-4567</li>
+          <li><i class="ri-mail-line me-2"></i> contact@zanglitrace.com</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="container">
+      <div class="copyright">
+        <p>© 2023 藏梨溯源 版权所有 | 基于区块链技术的溯源平台</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 
