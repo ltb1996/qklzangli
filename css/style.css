@@ -103,11 +103,12 @@ i[class^="ri-"] {
 /* 卡片样式 */
 .card {
   background-color: var(--white);
-  border-radius: 8px;
+  border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 
 .card:hover {
   transform: translateY(-5px);
@@ -154,13 +155,14 @@ i[class^="ri-"] {
 .navbar-logo {
   font-size: 24px;
   font-weight: 700;
-  color: var(--primary-color);
+  color: #853232;
   text-decoration: none;
+  font-family: '宋体', sans-serif
 }
 
 .navbar-links {
   display: flex;
-  gap: 20px;
+  gap: 54px;
 }
 
 .navbar-link {
@@ -176,8 +178,9 @@ i[class^="ri-"] {
 
 .navbar-actions {
   display: flex;
-  gap: 15px;
+  gap: 28px;
   align-items: center;
+  margin-left: -55px;
 }
 
 /* 页脚 */
