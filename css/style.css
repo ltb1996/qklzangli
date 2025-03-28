@@ -67,8 +67,8 @@ i[class^="ri-"] {
 .navbar-link i, 
 .footer i {
   position: relative;
-
   vertical-align: middle;
+  padding-top: 1px;
 }
 
 .btn-primary {
@@ -154,8 +154,9 @@ i[class^="ri-"] {
 .navbar-logo {
   font-size: 24px;
   font-weight: 700;
-  color: var(--primary-color);
+  color: #008305;
   text-decoration: none;
+  font-family: '宋体', Helvetica, sans-serif;
 }
 
 .navbar-links {
