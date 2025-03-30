@@ -21,6 +21,7 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
+  background-color: #F9F9F9;
 }
 
 .container {
@@ -67,9 +68,15 @@ i[class^="ri-"] {
 .navbar-link i, 
 .footer i {
   position: relative;
-
-  vertical-align: middle;
+  vertical-align: text-top;
+  padding-top: 1px;
 }
+
+.navbar-link1 i{
+  position: relative;
+  vertical-align: text-top;
+  /* padding-top: 1px; */
+} 
 
 .btn-primary {
   background-color: var(--primary-color);
@@ -164,6 +171,13 @@ i[class^="ri-"] {
 }
 
 .navbar-link {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar-link1 {
   color: var(--text-color);
   text-decoration: none;
   font-weight: 500;

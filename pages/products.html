@@ -62,6 +62,94 @@
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       margin-bottom: 20px;
     }
+
+    .product-words {
+      color: rgb(241, 89, 29);
+    }
+
+    /* 确保所有产品卡片高度一致 */
+    .product-grid .card {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 0; /* 移除底部间距 */
+    }
+
+    .product-grid .card-img {
+      height: 200px; /* 统一图片高度 */
+      object-fit: cover;
+      width: 100%; /* 确保宽度也统一 */
+    }
+
+    .product-grid .card-body {
+      flex: 1; /* 让卡片内容区域自动填充剩余高度 */
+      display: flex;
+      flex-direction: column;
+      padding: 15px; /* 统一内边距 */
+    }
+
+    .product-grid .card-title {
+      font-size: 16px; /* 统一标题大小 */
+      height: 24px; /* 固定标题高度 */
+      overflow: hidden; /* 超出部分隐藏 */
+      margin-bottom: 10px; /* 统一底部间距 */
+    }
+
+    .product-grid .card-text {
+      flex-grow: 1; /* 让描述文本区域自动填充可用空间 */
+      margin-bottom: 15px;
+      font-size: 14px; /* 统一描述文字大小 */
+      color: #666; /* 统一描述文字颜色 */
+      line-height: 1.4; /* 统一行高 */
+      height: 40px; /* 固定描述文本高度，大约2-3行文字 */
+      overflow: hidden; /* 超出部分隐藏 */
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 0;
+    }
+
+    /* 价格筛选区域样式 */
+    .price-filter {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    .product-words {
+      color: rgb(241, 89, 29);
+    }
+
+    .aboutxgll {
+      height: 510px;
+      position: relative;
+    }
+
+    /* 轮播图内容样式 */
+    .carousel {
+      height: 100%;
+    }
+
+    .carousel-inner {
+      height: 100%;
+    }
+
+    .carousel-item {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .carousel-img {
+      height: 100%;
+      object-fit: cover;
+    }
   </style>
 </head>
 <body>
@@ -132,83 +220,124 @@
   <div class="container mt-4">
     <div class="row">
       <!-- 左侧筛选栏 -->
-      <div class="col-md-3">
-        <div class="card p-3 mb-4">
-          <h5 class="fw-bold mb-3">价格区间</h5>
-          <div class="mb-3">
-            <div class="d-flex justify-content-between mb-2">
-              <span>¥0</span>
-              <span>¥500+</span>
-            </div>
-            <input type="range" class="form-range" min="0" max="500" step="50">
-          </div>
-          <div class="row g-2">
-            <div class="col-6">
-              <input type="number" class="form-control" placeholder="最低价">
-            </div>
-            <div class="col-6">
-              <input type="number" class="form-control" placeholder="最高价">
-            </div>
-          </div>
+<div class="col-md-3">
+  <div class="card p-3 mb-4">
+    <h5 class="fw-bold mb-3">价格区间</h5>
+    <div class="mb-3">
+      <div class="d-flex justify-content-between mb-2">
+        <span>¥0</span>
+        <span>¥500+</span>
+      </div>
+      <input type="range" class="form-range" min="0" max="500" step="50">
+    </div>
+    <div class="row g-2">
+      <div class="col-6">
+        <input type="number" class="form-control" placeholder="最低价">
+      </div>
+      <div class="col-6">
+        <input type="number" class="form-control" placeholder="最高价">
+      </div>
+    </div>
+  </div>
+
+  <div class="card p-3 mb-4">
+    <h5 class="fw-bold mb-3">溯源认证</h5>
+    <div class="form-check mb-2">
+      <input class="form-check-input" type="checkbox" id="verified" checked>
+      <label class="form-check-label" for="verified">
+        区块链认证
+      </label>
+    </div>
+    <div class="form-check mb-2">
+      <input class="form-check-input" type="checkbox" id="organic" checked>
+      <label class="form-check-label" for="organic">
+        有机认证
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="limited">
+      <label class="form-check-label" for="limited">
+        限量版
+      </label>
+    </div>
+  </div>
+
+  <!-- 产品评分 -->
+  <div class="card p-3 mb-4">
+    <h5 class="fw-bold mb-3">产品评分</h5>
+    <div class="form-check mb-2">
+      <input class="form-check-input" type="radio" name="rating" id="five-star" checked>
+      <label class="form-check-label" for="five-star">
+        <div class="text-warning">
+          <i class="ri-star-fill"></i>
+          <i class="ri-star-fill"></i>
+          <i class="ri-star-fill"></i>
+          <i class="ri-star-fill"></i>
+          <i class="ri-star-fill"></i>
         </div>
-        
-        <div class="card p-3 mb-4">
-          <h5 class="fw-bold mb-3">溯源认证</h5>
-          <div class="form-check mb-2">
-            <input class="form-check-input" type="checkbox" id="verified" checked>
-            <label class="form-check-label" for="verified">
-              区块链认证
-            </label>
-          </div>
-          <div class="form-check mb-2">
-            <input class="form-check-input" type="checkbox" id="organic" checked>
-            <label class="form-check-label" for="organic">
-              有机认证
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="limited">
-            <label class="form-check-label" for="limited">
-              限量版
-            </label>
-          </div>
+      </label>
+    </div>
+    <div class="form-check mb-2">
+      <input class="form-check-input" type="radio" name="rating" id="four-star">
+      <label class="form-check-label" for="four-star">
+        <div class="text-warning">
+          <i class="ri-star-fill"></i>
+          <i class="ri-star-fill"></i>
+          <i class="ri-star-fill"></i>
+          <i class="ri-star-fill"></i>
+          <i class="ri-star-line"></i>
         </div>
-        
-        <div class="card p-3">
-          <h5 class="fw-bold mb-3">产品评分</h5>
-          <div class="form-check mb-2">
-            <input class="form-check-input" type="radio" name="rating" id="five-star" checked>
-            <label class="form-check-label" for="five-star">
-              <div class="text-warning">
-                <i class="ri-star-fill"></i>
-                <i class="ri-star-fill"></i>
-                <i class="ri-star-fill"></i>
-                <i class="ri-star-fill"></i>
-                <i class="ri-star-fill"></i>
-              </div>
-            </label>
-          </div>
-          <div class="form-check mb-2">
-            <input class="form-check-input" type="radio" name="rating" id="four-star">
-            <label class="form-check-label" for="four-star">
-              <div class="text-warning">
-                <i class="ri-star-fill"></i>
-                <i class="ri-star-fill"></i>
-                <i class="ri-star-fill"></i>
-                <i class="ri-star-fill"></i>
-                <i class="ri-star-line"></i>
-              </div>
-              及以上
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="rating" id="all-ratings">
-            <label class="form-check-label" for="all-ratings">
-              显示所有评分
-            </label>
-          </div>
+        及以上
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="rating" id="all-ratings">
+      <label class="form-check-label" for="all-ratings">
+        显示所有评分
+      </label>
+    </div>
+  </div>
+
+  <!-- 产品信息 -->
+  <!-- 产品信息 -->
+  <div class="card p-3 mb-4 aboutxgll">
+    <h5 class="fw-bold mb-3">关于香格里拉</h5>
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://www.helloimg.com/i/2025/03/30/67e81dfd2e393.jpg" class="d-block w-100 carousel-img"
+            alt="1743265349889.jpg" title="1743265349889.jpg">
+        </div>
+        <div class="carousel-item">
+          <img src="//www.helloimg.com/i/2025/03/30/67e83049c2d1d.jpg" class="d-block w-100 carousel-img"
+            alt="1743270008956.jpg" title="1743270008956.jpg">
+        </div>
+        <div class="carousel-item">
+          <img src="https://www.helloimg.com/i/2025/03/30/67e8304b5765f.jpg" class="d-block w-100 carousel-img"
+            alt="1743266444524.jpg" title="1743266444524.jpg">
         </div>
       </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+  </div>
       
       <!-- 右侧产品列表 -->
       <div class="col-md-9">
@@ -216,8 +345,8 @@
           <!-- 产品1 -->
           <div class="card">
             <div style="position: relative;">
-              <span class="blockchain-badge" style="position: absolute; top: 10px; left: 10px;">
-                <i class="ri-link-m"></i> 区块链认证
+              <span class="blockchain-badge" style="position: absolute; top: 10px; left: 10px; color:  rgb(241, 89, 29);">
+                <i class="ri-link-m product-words"></i> 区块链认证
               </span>
               <img src="https://www.helloimg.com/i/2025/03/27/67e553db9547e.jpg"
                    alt="藏梨冻礼盒装" class="card-img">
@@ -235,8 +364,8 @@
           <!-- 产品2 -->
           <div class="card">
             <div style="position: relative;">
-              <span class="blockchain-badge" style="position: absolute; top: 10px; left: 10px;">
-                <i class="ri-link-m"></i> 区块链认证
+              <span class="blockchain-badge" style="position: absolute; top: 10px; left: 10px; color:  rgb(241, 89, 29);">
+                <i class="ri-link-m product-words"></i> 区块链认证
               </span>
               <img src="https://www.helloimg.com/i/2025/03/27/67e5551072a2b.jpg" 
                    alt="藏梨糕散装" class="card-img">
@@ -254,8 +383,8 @@
           <!-- 产品3 -->
           <div class="card">
             <div style="position: relative;">
-              <span class="blockchain-badge" style="position: absolute; top: 10px; left: 10px;">
-                <i class="ri-link-m"></i> 区块链认证
+              <span class="blockchain-badge" style="position: absolute; top: 10px; left: 10px; color:  rgb(241, 89, 29);">
+                <i class="ri-link-m product-words"></i> 区块链认证
               </span>
               <img src="https://www.helloimg.com/i/2025/03/27/67e553f165019.jpg" 
                    alt="藏梨膏礼盒" class="card-img">
@@ -273,8 +402,8 @@
           <!-- 产品4 -->
           <div class="card">
             <div style="position: relative;">
-              <span class="blockchain-badge" style="position: absolute; top: 10px; left: 10px;">
-                <i class="ri-link-m"></i> 区块链认证
+              <span class="blockchain-badge" style="position: absolute; top: 10px; left: 10px; color:  rgb(241, 89, 29);">
+                <i class="ri-link-m product-words"></i> 区块链认证
               </span>
               <img src="https://www.helloimg.com/i/2025/03/27/67e553e8a55a1.jpg" 
                    alt="藏梨冻散装" class="card-img">
@@ -292,8 +421,8 @@
           <!-- 产品5 -->
           <div class="card">
             <div style="position: relative;">
-              <span class="blockchain-badge" style="position: absolute; top: 10px; left: 10px;">
-                <i class="ri-link-m"></i> 区块链认证
+              <span class="blockchain-badge" style="position: absolute; top: 10px; left: 10px; color:  rgb(241, 89, 29);">
+                <i class="ri-link-m product-words"></i> 区块链认证
               </span>
               <img src="https://www.helloimg.com/i/2025/03/27/67e55515d8aaf.jpg" 
                    alt="藏梨膏散装" class="card-img">
@@ -311,8 +440,8 @@
           <!-- 产品6 -->
           <div class="card">
             <div style="position: relative;">
-              <span class="blockchain-badge" style="position: absolute; top: 10px; left: 10px;">
-                <i class="ri-link-m"></i> 区块链认证
+              <span class="blockchain-badge" style="position: absolute; top: 10px; left: 10px; color:  rgb(241, 89, 29);">
+                <i class="ri-link-m product-words"></i> 区块链认证
               </span>
               <img src="https://www.helloimg.com/i/2025/03/27/67e553e98fe19.jpg" 
                    alt="藏梨礼盒特惠装" class="card-img">
@@ -330,8 +459,8 @@
           <!-- 产品7 -->
           <div class="card">
             <div style="position: relative;">
-              <span class="blockchain-badge" style="position: absolute; top: 10px; left: 10px;">
-                <i class="ri-link-m"></i> 区块链认证
+              <span class="blockchain-badge" style="position: absolute; top: 10px; left: 10px; color:  rgb(241, 89, 29);">
+                <i class="ri-link-m product-words"></i> 区块链认证
               </span>
               <img src="https://www.helloimg.com/i/2025/03/27/67e553db9547e.jpg" 
                    alt="藏梨冻礼盒装" class="card-img">
@@ -349,8 +478,8 @@
           <!-- 产品8 -->
           <div class="card">
             <div style="position: relative;">
-              <span class="blockchain-badge" style="position: absolute; top: 10px; left: 10px;">
-                <i class="ri-link-m"></i> 区块链认证
+              <span class="blockchain-badge" style="position: absolute; top: 10px; left: 10px; color:  rgb(241, 89, 29);">
+                <i class="ri-link-m product-words"></i> 区块链认证
               </span>
               <img src="https://www.helloimg.com/i/2025/03/27/67e553e98fe19.jpg" 
                    alt="藏梨" class="card-img">
@@ -364,7 +493,27 @@
               </div>
             </div>
           </div>
+           <!-- 产品9 -->
+        <div class="card">
+          <div style="position: relative;">
+            <span class="blockchain-badge" style="position: absolute; top: 10px; left: 10px; color:  rgb(241, 89, 29);">
+              <i class="ri-link-m product-words"></i> 区块链认证
+            </span>
+            <img src="https://www.helloimg.com/i/2025/03/29/67e7ff1652039.jpg" 
+                 alt="藏梨" class="card-img">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">藏梨膏</h5>
+            <p class="card-text">藏梨膏，甜润滋养，天然无添加。</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="fw-bold text-primary">¥158.00</span>
+              <a href="product-detail.html" class="btn btn-sm btn-outline">查看详情</a>
+            </div>
+          </div>
         </div>
+      </div>
+        </div>
+
         
         <!-- 分页 -->
         <div class="d-flex justify-content-center mt-5">

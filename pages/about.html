@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,17 +9,265 @@
   <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* .aboutus{
+      background: url('https://www.helloimg.com/i/2025/03/28/67e684eacf3fa.jpg') center center no-repeat;
+      background-size: 100% 100%;
+    } */
+
+    .card-zz {
+    background: url("https://www.helloimg.com/i/2025/03/30/67e81915dc965.jpg") no-repeat center center / cover;
+    position: relative;
+    }
+
+    .card-zz::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* 黑色蒙层，透明度50% */
+        z-index: 1; /* 确保蒙层在文字之下 */
+    }
+
+    .card-zz .card-body {
+        position: relative;
+        z-index: 2; /* 确保文字在蒙层之上 */
+    }
+
+    .card-zz2 {
+        background: url("https://www.helloimg.com/i/2025/03/30/67e81915055ab.jpg") no-repeat center center / cover;
+        position: relative;
+    }
+
+    .card-zz2::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* 黑色蒙层，透明度50% */
+        z-index: 1; /* 确保蒙层在文字之下 */
+    }
+
+    .card-zz2 .card-body {
+        position: relative;
+        z-index: 2; /* 确保文字在蒙层之上 */
+    }
+
+    .card-zz3 {
+        background: url("https://www.helloimg.com/i/2025/03/30/67e8191744919.jpg") no-repeat center center / cover;
+        position: relative;
+    }
+
+    .card-zz3::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* 黑色蒙层，透明度50% */
+        z-index: 1; /* 确保蒙层在文字之下 */
+    }
+
+    .card-zz3 .card-body {
+        position: relative;
+        z-index: 2; /* 确保文字在蒙层之上 */
+    }
+
+    .word-zz {
+        color: white;
+    }
+
+    .word-page {
+      color: white;
+      font-size: 15px;
+    }
+
+    .team-layout .col-md-4 {
+      flex: 0 0 auto;
+      width: 33.33333%;
+    }
+
+    .team-layout .second-row {
+      display: flex;
+      justify-content: center;
+    }
+
+    .team-layout .second-row .col-md-3 {
+      flex: 0 0 auto;
+      width: 33.33333%;
+      margin: 0 10px;
+    }
+
+    .aboutus {
+      font-family: '黑体', Helvetica, sans-serif;
+      font-size: 40px;
+    }
+
+    .logo-zl {
+      font-family: '宋体', Helvetica, sans-serif;
+      font-size: 25px;
+    }
+
+    .presentation {
+      background: url("https://www.helloimg.com/i/2025/03/29/67e7f09d5c3b0.jpg");
+      /* background-color: white; */
+      width: 570px;
+      height: 356px;
+      border-radius: 14px ;
+      /* margin-left: 10px; */
+    }
+
+    .presentation-team {
+      margin-top: 22px;
+      margin-left: 77px;
+      color: #444444;
+    }
+
+    .presentation-words {
+      text-indent: 2em;
+      margin-left: 82px;
+      color: #333333;
+      font-family:  "PingFang SC", "Helvetica Neue";
+    }
+
+    .hexin {
+      width: 520px;
+      height: 550px;
+      margin-top: 7px;
+    }
+
+    .center-worth {
+      background-color: rgb(240, 244, 245);
+      width: 618px;
+      height: 560px;
+      margin-left: -40px;
+      border-radius: 3px;
+    }
+
+    .hexinworth {
+      margin-top: 24px;
+    }
+
+    .hexin-page {
+      margin-bottom: 6px;
+    }
+
+    .recognition-qk {
+      width: 590px;
+      height: 1036px;
+    }
+
+    .recognition-kp {
+      /* width: 565px; */
+      height: 620px;
+    }
+
+    .recognition-kp1 {
+      /* width: 590px; */
+      height: 495px;
+      margin-top: 24px;
+    }
+
+      /* .plant {
+        height: 105px;
+      } */
+
+    .techonology-u {
+      width: 590px;
+      height: 1000px;
+      background-color: rgb(238, 244, 245);
+      border-radius: 3px;
+
+    }
+
+    .techonology-w {
+      margin-top: 18px;
+    }
+
+    .img-zl {
+      height: 143px;
+      width: 191px;
+      margin-top: 2px;
+      border-radius: 3px;
+    }
+
+    .img-zl2 {
+      height: 186px;
+      width: 272px;
+      margin-top: 22px;
+      border-radius: 3px;
+    }
+
+    .img-zl3 {
+      height: 186px;
+      width: 290px;
+      margin-top: 22px;
+      border-radius: 3px;
+    }
+
+    .img-zl4 {
+      height: 143px;
+      width: 185px;
+      margin-top: 2px;
+      border-radius: 3px;
+    }
+
+    .img-zl5 {
+      height: 143px;
+      width: 182px;
+      margin-top: 2px;
+      border-radius: 3px;
+    }
+
+    .contactus {
+    background: url("https://www.helloimg.com/i/2025/03/30/67e8224be1c6b.jpg") no-repeat center center / cover;
+    position: relative; /* 确保伪元素可以相对于此元素定位 */
+    width: 560px;
+}
+
+    .contactus::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* 黑色蒙层，透明度50% */
+        z-index: 1; /* 确保蒙层在文字之下 */
+    }
+
+    .contactus .card-body {
+        position: relative;
+        z-index: 2; /* 确保文字在蒙层之上 */
+    }
+
+    .word-contact {
+      color: white;
+      font-size: 20px;
+      margin-top: 7px;
+    }
+    
+    .message {
+      margin-right: -24px
+    }
+  </style>
 </head>
+
 <body>
   <!-- 导航栏 -->
-  <nav class="navbar">
+  <nav class="navbar toubu">
     <div class="container navbar-container">
-      <a href="home.html" class="navbar-logo">藏梨溯源</a>
+      <a href="home.html" class="navbar-logo logo-zl">藏梨溯源</a>
       <div class="navbar-links">
         <a href="home.html" class="navbar-link">首页</a>
         <a href="products.html" class="navbar-link">产品展示</a>
         <a href="blockchain-trace.html" class="navbar-link">溯源系统</a>
-        <a href="about.html" class="navbar-link active">关于我们</a>
+        <a href="about.html" class="navbar-link active ">关于我们</a>
       </div>
       <div class="navbar-actions">
         <a href="cart.html" class="navbar-link"><i class="ri-shopping-cart-2-line"></i> 购物车</a>
@@ -27,109 +276,109 @@
       </div>
     </div>
   </nav>
-  
+
   <!-- 页面标题 -->
   <div class="container mt-4">
-    <div class="row">
+    <div class="row bac-our">
       <div class="col-12 text-center">
-        <h1 class="fw-bold mb-0">关于我们</h1>
-        <p class="text-muted mb-5">用区块链技术连接产地与餐桌，让每一颗藏梨都有故事</p>
+        <h1 class="fw-bold mb-0 aboutus">关于我们</h1>
+        <p class="text-muted mb-5 aboutus-qk">用区块链技术连接产地与餐桌，让每一颗藏梨都有故事</p>
       </div>
     </div>
   </div>
-  
+
   <!-- 公司简介 -->
-  <div class="container mt-3">
+  <div class="container mt-3 container-bj">
     <div class="row align-items-center mb-5">
-      <div class="col-md-6">
-        <h2 class="fw-bold mb-4">公司简介</h2>
-        <p>香格里拉藏梨溯源是一家专注于特色农产品区块链溯源的科技公司，成立于2020年，总部位于云南省迪庆藏族自治州香格里拉市。</p>
-        <p>我们致力于将区块链技术应用于农产品溯源领域，打造从种植到餐桌的全程可追溯体系，让消费者能够真实了解每一颗藏梨的生长环境、采摘过程和物流运输等信息。</p>
-        <p>公司拥有自己的藏梨种植基地，面积超过1000亩，全部位于海拔3000米以上的高原地区，采用有机种植方式，确保每一颗藏梨都保持纯净的口感和丰富的营养价值。</p>
+      <div class="col-md-6 presentation">
+        <h2 class="fw-bold mb-4 presentation-team">平台制作团队介绍</h2>
+        <p class="presentation-words">香格里拉市地处滇、川、藏三省区交界地带，气候独特，地理条件优越,为藏梨种植提供了理想的环境。</p>
+        <p class="presentation-words">我们致力于将区块链技术应用于农产品溯源领域，打造从种植到餐桌的全程可追溯体系，让消费者能够真实了解每一颗藏梨的生长环境、采摘过程和物流运输等信息。</p>
+        <p class="presentation-words">我们是来自三亚学院的大二学生团队。怀着对科技与农业融合的热情，我们共同开发了“香格里拉藏梨溯源”项目，致力于打造农产品全程可追溯体系  , 用技术与创意为传统农业注入新的活力。</p>
       </div>
       <div class="col-md-6">
-        <img src="https://www.helloimg.com/i/2025/03/27/67e55605b7e76.jpg" 
-             class="img-fluid rounded-3 shadow" alt="公司总部">
+        <img src="https://www.helloimg.com/i/2025/03/27/67e55605b7e76.jpg" class="img-fluid rounded-3 shadow "
+          alt="公司总部">
       </div>
     </div>
-    
+
     <!-- 我们的故事 -->
     <div class="row mb-5">
       <div class="col-12 text-center mb-4">
         <h2 class="fw-bold">我们的故事</h2>
-        <p class="text-muted w-75 mx-auto">每一项事业的背后，都有一个感人的故事</p>
+        <p class="text-muted w-75 mx-auto word-page">每一项事业的背后，都有一个感人的故事</p>
       </div>
-      
+
       <div class="col-md-4 mb-4">
-        <div class="card h-100">
+        <div class="card h-100 card-zz">
           <div class="card-body">
             <div class="d-flex align-items-center mb-3">
               <div class="trace-icon me-3">
                 <i class="ri-seedling-line"></i>
               </div>
-              <h4 class="card-title m-0">种子萌芽</h4>
+              <h4 class="card-title m-0 word-zz">种子萌芽</h4>
             </div>
-            <p class="card-text">2018年，我们的创始人王志军回到家乡香格里拉，被当地优质的藏梨资源和贫困的农民现状所触动，产生了通过科技帮助农民增收的想法。</p>
+            <p class="card-text word-page">2023年，杨阳骄带着对家乡的牵挂与思考，回到了香格里拉。当地优质的藏梨资源与农民的贫困现状形成鲜明对比，触动了他内心深处的责任感。他萌生了一个想法：用科技的力量为家乡的农民创造更多价值。</p>
           </div>
         </div>
       </div>
-      
+
       <div class="col-md-4 mb-4">
-        <div class="card h-100">
+        <div class="card h-100 card-zz2">
           <div class="card-body">
             <div class="d-flex align-items-center mb-3">
               <div class="trace-icon me-3">
                 <i class="ri-team-line"></i>
               </div>
-              <h4 class="card-title m-0">团队组建</h4>
+              <h4 class="card-title m-0 word-zz">团队组建</h4>
             </div>
-            <p class="card-text">2019年，王志军从北京邀请了多位区块链技术专家和农业专家加入团队，共同研究如何将区块链技术应用于农产品溯源领域。</p>
+            <p class="card-text word-page">2023年，杨阳骄开始深入研究藏梨冻的潜力，搜集了大量资料并编写了计划书。然而，由于种种原因，这个计划遗憾止步于2024年。但这并未让他停下脚步，而是为未来的突破埋下了伏笔。</p>
           </div>
         </div>
       </div>
-      
+
       <div class="col-md-4 mb-4">
-        <div class="card h-100">
+        <div class="card h-100 card-zz3">
           <div class="card-body">
             <div class="d-flex align-items-center mb-3">
               <div class="trace-icon me-3">
                 <i class="ri-rocket-line"></i>
               </div>
-              <h4 class="card-title m-0">正式起航</h4>
+              <h4 class="card-title m-0 word-zz">正式起航</h4>
             </div>
-            <p class="card-text">2020年，香格里拉藏梨溯源正式成立，并获得了多家风投机构的投资支持，开始在香格里拉地区建立自己的藏梨种植基地和溯源系统。</p>
+            <p class="card-text word-page">而2025年，在一次偶然的交流中，杨阳骄结识了四位区块链领域的专业同学。他们共同探讨如何将区块链技术应用于农产品溯源领域，为藏梨产业注入新的活力。这一年，团队正式启航，开启了科技赋能农业的新篇章。</p>
           </div>
         </div>
       </div>
     </div>
-    
+
     <!-- 核心价值观 -->
     <div class="row mb-5">
       <div class="col-md-6">
-        <img src="https://www.helloimg.com/i/2025/03/27/67e55605c586d.jpeg" 
-             class="img-fluid rounded-3 shadow" alt="我们的价值观">
+        <img src="https://www.helloimg.com/i/2025/03/27/67e55605c586d.jpeg" class="img-fluid rounded-3 shadow hexin"
+          alt="我们的价值观">
       </div>
-      <div class="col-md-6">
-        <h2 class="fw-bold mb-4">核心价值观</h2>
-        <div class="d-flex mb-4">
+      <div class="col-md-6 center-worth">
+        <h2 class="fw-bold mb-4 hexinworth">核心价值观</h2>
+        <div class="d-flex mb-4 ">
           <div class="me-3 fs-1 text-primary">01</div>
           <div>
             <h4>诚信透明</h4>
-            <p>我们坚持诚信经营，通过区块链技术确保产品信息真实可靠，让消费者看得见、查得到。</p>
+            <p class="hexin-page">我们坚持诚信经营，通过区块链技术确保产品信息真实可靠，让消费者看得见、查得到。</p>
           </div>
         </div>
         <div class="d-flex mb-4">
           <div class="me-3 fs-1 text-primary">02</div>
           <div>
             <h4>品质至上</h4>
-            <p>我们严格把控产品质量，从种植到加工全程采用高标准，确保每一颗藏梨都是精品。</p>
+            <p class="hexin-page">我们严格把控产品质量，从种植到加工全程采用高标准，确保每一颗藏梨都是精品。</p>
           </div>
         </div>
         <div class="d-flex mb-4">
           <div class="me-3 fs-1 text-primary">03</div>
           <div>
             <h4>科技赋能</h4>
-            <p>我们相信科技能够改变农业，通过区块链、物联网等技术提升农产品价值，实现农民增收。</p>
+            <p class="hexin-page">我们相信科技能够改变农业，通过区块链、物联网等技术提升农产品价值，实现农民增收。</p>
           </div>
         </div>
         <div class="d-flex">
@@ -141,21 +390,23 @@
         </div>
       </div>
     </div>
-    
+
     <!-- 我们的团队 -->
-    <div class="row mb-5">
+    <div class="row mb-5 team-layout">
       <div class="col-12 text-center mb-4">
         <h2 class="fw-bold">我们的团队</h2>
         <p class="text-muted w-75 mx-auto">一群有理想、有激情的年轻人，致力于改变传统农业</p>
       </div>
-      
-      <div class="col-md-3 mb-4">
+
+      <!-- 第一行三人 -->
+      <div class="col-md-4 mb-4">
         <div class="card h-100 text-center">
-          <img src="https://www.helloimg.com/i/2025/03/27/67e5595e80d23.png" class="card-img-top rounded-circle mx-auto mt-4" style="width: 120px; height: 120px;" alt="CEO">
+          <img src="https://www.helloimg.com/i/2025/03/29/67e7aeffa8598.png" class="card-img-top rounded-circle mx-auto mt-4"
+            style="width: 120px; height: 120px;" alt="CEO">
           <div class="card-body">
-            <h5 class="card-title">王志军</h5>
-            <p class="text-muted mb-2">创始人 & CEO</p>
-            <p class="card-text small">前阿里巴巴技术专家，拥有10年区块链行业经验，香格里拉本地人。</p>
+            <h5 class="card-title">杨阳骄</h5>
+            <p class="text-muted mb-2">组员</p>
+            <p class="card-text small">负责计划书创建，香格里拉本地人。</p>
             <div class="d-flex justify-content-center mt-3">
               <a href="#" class="text-muted me-2"><i class="ri-linkedin-fill"></i></a>
               <a href="#" class="text-muted me-2"><i class="ri-twitter-fill"></i></a>
@@ -164,14 +415,15 @@
           </div>
         </div>
       </div>
-      
-      <div class="col-md-3 mb-4">
+
+      <div class="col-md-4 mb-4">
         <div class="card h-100 text-center">
-          <img src="https://randomuser.me/api/portraits/women/44.jpg" class="card-img-top rounded-circle mx-auto mt-4" style="width: 120px; height: 120px;" alt="CTO">
+          <img src="https://www.helloimg.com/i/2025/03/29/67e7aef9044fd.png" class="card-img-top rounded-circle mx-auto mt-4"
+            style="width: 120px; height: 120px;" alt="CTO">
           <div class="card-body">
-            <h5 class="card-title">李雪梅</h5>
-            <p class="text-muted mb-2">技术总监 & CTO</p>
-            <p class="card-text small">前腾讯高级工程师，区块链技术专家，主导开发公司的溯源系统。</p>
+            <h5 class="card-title">袁冶</h5>
+            <p class="text-muted mb-2">组长</p>
+            <p class="card-text small">论文模块分配，协调工作，修改论文，网页制作修改</p>
             <div class="d-flex justify-content-center mt-3">
               <a href="#" class="text-muted me-2"><i class="ri-linkedin-fill"></i></a>
               <a href="#" class="text-muted me-2"><i class="ri-twitter-fill"></i></a>
@@ -180,14 +432,15 @@
           </div>
         </div>
       </div>
-      
-      <div class="col-md-3 mb-4">
+
+      <div class="col-md-4 mb-4">
         <div class="card h-100 text-center">
-          <img src="https://randomuser.me/api/portraits/men/67.jpg" class="card-img-top rounded-circle mx-auto mt-4" style="width: 120px; height: 120px;" alt="农业专家">
+          <img src="https://www.helloimg.com/i/2025/03/29/67e7aee374e93.png" class="card-img-top rounded-circle mx-auto mt-4"
+            style="width: 120px; height: 120px;" alt="农业专家">
           <div class="card-body">
-            <h5 class="card-title">张明远</h5>
-            <p class="text-muted mb-2">农业总监</p>
-            <p class="card-text small">中国农业大学博士，拥有20年果树栽培经验，负责公司的种植基地管理。</p>
+            <h5 class="card-title">郭瑾涵</h5>
+            <p class="text-muted mb-2">组员</p>
+            <p class="card-text small">编写论文，修改论文，网页制作修改</p>
             <div class="d-flex justify-content-center mt-3">
               <a href="#" class="text-muted me-2"><i class="ri-linkedin-fill"></i></a>
               <a href="#" class="text-muted me-2"><i class="ri-twitter-fill"></i></a>
@@ -196,40 +449,61 @@
           </div>
         </div>
       </div>
-      
-      <div class="col-md-3 mb-4">
-        <div class="card h-100 text-center">
-          <img src="https://www.helloimg.com/i/2025/03/27/67e5595e88818.png" class="card-img-top rounded-circle mx-auto mt-4" style="width: 120px; height: 120px;" alt="市场总监">
-          <div class="card-body">
-            <h5 class="card-title">赵云霞</h5>
-            <p class="text-muted mb-2">市场总监</p>
-            <p class="card-text small">前京东高级营销经理，拥有丰富的农产品电商运营经验。</p>
-            <div class="d-flex justify-content-center mt-3">
-              <a href="#" class="text-muted me-2"><i class="ri-linkedin-fill"></i></a>
-              <a href="#" class="text-muted me-2"><i class="ri-twitter-fill"></i></a>
-              <a href="#" class="text-muted"><i class="ri-mail-line"></i></a>
+
+      <!-- 第二行两人，居中显示 -->
+      <div class="second-row">
+        <div class="col-md-3 mb-4">
+          <div class="card h-100 text-center">
+            <img src="https://www.helloimg.com/i/2025/03/29/67e7aefdf13b9.png" class="card-img-top rounded-circle mx-auto mt-4"
+              style="width: 120px; height: 120px;" alt="市场总监">
+            <div class="card-body">
+              <h5 class="card-title">杨鸣</h5>
+              <p class="text-muted mb-2">组员</p>
+              <p class="card-text small">编写论文，修改论文，网页制作修改</p>
+              <div class="d-flex justify-content-center mt-3">
+                <a href="#" class="text-muted me-2"><i class="ri-linkedin-fill"></i></a>
+                <a href="#" class="text-muted me-2"><i class="ri-twitter-fill"></i></a>
+                <a href="#" class="text-muted"><i class="ri-mail-line"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 mb-4">
+          <div class="card h-100 text-center">
+            <img src="https://www.helloimg.com/i/2025/03/29/67e7aef162127.png" class="card-img-top rounded-circle mx-auto mt-4"
+              style="width: 120px; height: 120px;" alt="产品经理">
+            <div class="card-body">
+              <h5 class="card-title">文俊宇</h5>
+              <p class="text-muted mb-2">组员</p>
+              <p class="card-text small">编写论文，修改论文，网页制作修改</p>
+              <div class="d-flex justify-content-center mt-3">
+                <a href="#" class="text-muted me-2"><i class="ri-linkedin-fill"></i></a>
+                <a href="#" class="text-muted me-2"><i class="ri-twitter-fill"></i></a>
+                <a href="#" class="text-muted"><i class="ri-mail-line"></i></a>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    
+
     <!-- 区块链溯源技术 -->
     <div class="row mb-5">
       <div class="col-12 text-center mb-4">
         <h2 class="fw-bold">我们的区块链溯源技术</h2>
         <p class="text-muted w-75 mx-auto">透明、不可篡改、全程可追溯</p>
       </div>
-      
-      <div class="col-md-6">
+
+      <div class="col-md-6 recognition-qk">
         <div class="position-relative mb-4">
           <div class="blockchain-badge position-absolute" style="top: 15px; left: 15px; z-index: 1;">
             <i class="ri-link-m"></i> 区块链认证
           </div>
-          <img src="https://www.helloimg.com/i/2025/03/27/67e559649df14.jpg" 
-               class="img-fluid rounded-3 shadow" alt="区块链溯源技术">
+          <img src="https://www.helloimg.com/i/2025/03/27/67e559649df14.jpg" class="img-fluid rounded-3 shadow"
+            alt="区块链溯源技术">
         </div>
-        <div class="browser-frame mb-4">
+        <div class="browser-frame mb-4 recognition-kp">
           <div class="browser-header">
             <div class="browser-dots">
               <div class="browser-dot dot-red"></div>
@@ -239,8 +513,8 @@
             <div class="browser-address">https://zanglitrace.com/trace/0x7F9d8Fb3bf6c0ea52ca5c</div>
           </div>
           <div class="browser-content p-3">
-            <div class="blockchain-trace">
-              <div class="trace-item">
+            <div class="blockchain-trace recognition-kp1">
+              <div class="trace-item plant">
                 <div class="trace-icon">
                   <i class="ri-plant-line"></i>
                 </div>
@@ -284,64 +558,68 @@
           </div>
         </div>
       </div>
-      
-      <div class="col-md-6">
-        <h3 class="fw-bold mb-4">技术优势</h3>
+
+      <div class="col-md-6 techonology-u">
+        <h3 class="fw-bold mb-4 techonology-w">技术优势</h3>
         <div class="d-flex mb-4">
-          <div class="trace-icon me-3">
-            <i class="ri-lock-line"></i>
-          </div>
-          <div>
-            <h5>不可篡改</h5>
-            <p>所有信息一旦上链，任何人都无法篡改，确保数据的真实性和可靠性。</p>
-          </div>
+            <div class="trace-icon me-3">
+                <i class="ri-lock-line"></i>
+            </div>
+            <div>
+                <h5>不可篡改</h5>
+                <p>所有信息一旦上链，任何人都无法篡改，确保数据的真实性和可靠性。</p>
+            </div>
         </div>
         <div class="d-flex mb-4">
-          <div class="trace-icon me-3">
-            <i class="ri-eye-line"></i>
-          </div>
-          <div>
-            <h5>透明公开</h5>
-            <p>消费者可以通过扫描产品上的二维码，查看产品从种植到销售的全过程。</p>
-          </div>
+            <div class="trace-icon me-3">
+                <i class="ri-eye-line"></i>
+            </div>
+            <div>
+                <h5>透明公开</h5>
+                <p>消费者可以通过扫描产品上的二维码，查看产品从种植到销售的全过程。</p>
+            </div>
         </div>
         <div class="d-flex mb-4">
-          <div class="trace-icon me-3">
-            <i class="ri-shield-check-line"></i>
-          </div>
-          <div>
-            <h5>防伪溯源</h5>
-            <p>每一颗藏梨都有唯一的区块链身份标识，消费者可以验证产品的真伪。</p>
-          </div>
+            <div class="trace-icon me-3">
+                <i class="ri-shield-check-line"></i>
+            </div>
+            <div>
+                <h5>防伪溯源</h5>
+                <p>每一颗藏梨都有唯一的区块链身份标识，消费者可以验证产品的真伪。</p>
+            </div>
         </div>
         <div class="d-flex mb-4">
-          <div class="trace-icon me-3">
-            <i class="ri-device-line"></i>
-          </div>
-          <div>
-            <h5>物联网结合</h5>
-            <p>我们在种植基地部署了物联网设备，自动采集温度、湿度等数据上链，确保数据真实性。</p>
-          </div>
+            <div class="trace-icon me-3">
+                <i class="ri-device-line"></i>
+            </div>
+            <div>
+                <h5>物联网结合</h5>
+                <p>我们在种植基地部署了物联网设备，自动采集温度、湿度等数据上链，确保数据真实性。</p>
+            </div>
         </div>
         <div class="d-flex">
-          <div class="trace-icon me-3">
-            <i class="ri-user-heart-line"></i>
-          </div>
-          <div>
-            <h5>消费者参与</h5>
-            <p>消费者可以通过平台参与产品评价，这些评价也会被记录在区块链上，形成完整的产品声誉系统。</p>
-          </div>
+            <div class="trace-icon me-3">
+                <i class="ri-user-heart-line"></i>
+            </div>
+            <div>
+                <h5>消费者参与</h5>
+                <p>消费者可以通过平台参与产品评价，这些评价也会被记录在区块链上，形成完整的产品声誉系统。</p>
+            </div>
         </div>
-      </div>
+        <img src="https://www.helloimg.com/i/2025/03/29/67e7c1f6729b7.jpg" alt="zl.jpg" title="zl.jpg" class="img-zl2">
+        <img src="https://www.helloimg.com/i/2025/03/29/67e7c3f320172.jpg" alt="zl3.jpg" title="zl3.jpg" class="img-zl3">
+        <img src="https://www.helloimg.com/i/2025/03/29/67e7c12ec6123.jpg" alt="zl2.jpg" title="zl2.jpg" class="img-zl">
+        <img src="https://www.helloimg.com/i/2025/03/29/67e7c6e5dfcaf.jpg" alt="zl5.jpg" title="zl5.jpg" class="img-zl4">
+        <img src="https://www.helloimg.com/i/2025/03/29/67e7c726d93b6.jpg" alt="zl4.jpg" title="zl4.jpg" class="img-zl5">
     </div>
-    
+
     <!-- 合作伙伴 -->
     <div class="row mb-5">
       <div class="col-12 text-center mb-4">
         <h2 class="fw-bold">合作伙伴</h2>
         <p class="text-muted w-75 mx-auto">与行业领先者共同推动区块链农业的发展</p>
       </div>
-      
+
       <div class="col-12">
         <div class="row align-items-center justify-content-center">
           <div class="col-md-2 col-6 mb-4 text-center">
@@ -362,25 +640,25 @@
         </div>
       </div>
     </div>
-    
+
     <!-- 联系我们 -->
     <div class="row mb-5">
       <div class="col-12 text-center mb-4">
         <h2 class="fw-bold">联系我们</h2>
         <p class="text-muted w-75 mx-auto">有任何问题，请随时联系我们</p>
       </div>
-      
+
       <div class="col-md-6 mb-4">
-        <div class="card h-100">
+        <div class="card h-100 contactus">
           <div class="card-body p-4">
-            <h4 class="card-title mb-4">公司地址</h4>
+            <h4 class="card-title mb-4 word-contact">公司地址</h4>
             <div class="d-flex mb-3">
               <div class="me-3">
                 <i class="ri-map-pin-line text-primary" style="font-size: 24px;"></i>
               </div>
               <div>
-                <h5 class="mb-1">总部</h5>
-                <p class="mb-0">云南省迪庆藏族自治州香格里拉市金沙大道28号科技园B栋501室</p>
+                <h5 class="mb-1 word-contact">总部</h5>
+                <p class="mb-0 word-contact">云南省迪庆藏族自治州香格里拉市金沙大道28号科技园B栋501室</p>
               </div>
             </div>
             <div class="d-flex mb-3">
@@ -388,8 +666,8 @@
                 <i class="ri-map-pin-line text-primary" style="font-size: 24px;"></i>
               </div>
               <div>
-                <h5 class="mb-1">种植基地</h5>
-                <p class="mb-0">云南省迪庆藏族自治州香格里拉市金沙镇藏梨谷</p>
+                <h5 class="mb-1 word-contact">种植基地</h5>
+                <p class="mb-0 word-contact">云南省迪庆藏族自治州香格里拉市金沙镇藏梨谷</p>
               </div>
             </div>
             <div class="d-flex mb-3">
@@ -397,8 +675,8 @@
                 <i class="ri-phone-line text-primary" style="font-size: 24px;"></i>
               </div>
               <div>
-                <h5 class="mb-1">电话</h5>
-                <p class="mb-0">400-123-4567</p>
+                <h5 class="mb-1 word-contact">电话</h5>
+                <p class="mb-0 word-contact">400-123-4567</p>
               </div>
             </div>
             <div class="d-flex">
@@ -406,16 +684,16 @@
                 <i class="ri-mail-line text-primary" style="font-size: 24px;"></i>
               </div>
               <div>
-                <h5 class="mb-1">邮箱</h5>
-                <p class="mb-0">contact@zanglitrace.com</p>
+                <h5 class="mb-1 word-contact">邮箱</h5>
+                <p class="mb-0 word-contact">contact@zanglitrace.com</p>
               </div>
             </div>
           </div>
         </div>
       </div>
-      
+
       <div class="col-md-6 mb-4">
-        <div class="card h-100">
+        <div class="card h-100 message">
           <div class="card-body p-4">
             <h4 class="card-title mb-4">留言咨询</h4>
             <form>
@@ -440,7 +718,7 @@
       </div>
     </div>
   </div>
-  
+
   <!-- 页脚 -->
   <footer class="footer">
     <div class="container footer-container">
@@ -454,7 +732,7 @@
           <a href="#" class="text-white"><i class="ri-twitter-x-line"></i></a>
         </div>
       </div>
-      
+
       <div class="footer-section">
         <h3>快速链接</h3>
         <ul class="footer-links">
@@ -464,7 +742,7 @@
           <li><a href="about.html">关于我们</a></li>
         </ul>
       </div>
-      
+
       <div class="footer-section">
         <h3>客户服务</h3>
         <ul class="footer-links">
@@ -474,7 +752,7 @@
           <li><a href="#">售后服务</a></li>
         </ul>
       </div>
-      
+
       <div class="footer-section">
         <h3>联系我们</h3>
         <ul class="footer-links">
@@ -484,7 +762,7 @@
         </ul>
       </div>
     </div>
-    
+
     <div class="container">
       <div class="copyright">
         <p>© 2023 藏梨溯源 版权所有 | 基于区块链技术的溯源平台</p>
@@ -494,4 +772,5 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html> 
+
+</html>
